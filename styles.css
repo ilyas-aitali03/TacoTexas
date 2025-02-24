@@ -201,16 +201,97 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.2rem;
+    /* Header */
+    header {
+        padding: 10px 20px;
     }
-    
-    .hero-subtitle {
-        font-size: 1.2rem;
+
+    .logo span {
+        font-size: 1.5rem; /* Réduire la taille du texte du logo */
     }
-    
-    .hero-buttons {
+
+    .nav-links {
+        display: none; /* Masquer les liens de navigation par défaut */
         flex-direction: column;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Afficher les liens lorsque le menu est activé */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block; /* Afficher le bouton hamburger */
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 2rem; /* Réduire la taille du titre */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem; /* Réduire la taille du sous-titre */
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Empiler les boutons verticalement */
+    }
+
+    /* About Us Section */
+    .about-container {
+        flex-direction: column; /* Empiler l'image et le texte */
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 100%; /* Ajuster la largeur de l'image */
+    }
+
+    .about-title {
+        font-size: 2rem; /* Réduire la taille du titre */
+    }
+
+    /* Signature Dishes Section */
+    .dishes-container {
+        grid-template-columns: 1fr; /* Une seule colonne pour les plats */
+    }
+
+    /* Locations & Reservations Section */
+    .location-container {
+        flex-direction: column; /* Empiler la carte et le formulaire */
+    }
+
+    .map, .reservation-form {
+        max-width: 100%; /* Ajuster la largeur */
+    }
+
+    /* Testimonials Section */
+    .testimonial-slide {
+        max-width: 100%; /* Ajuster la largeur */
+    }
+
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column; /* Empiler le formulaire et les informations */
+    }
+
+    /* Footer Section */
+    .footer-container {
+        flex-direction: column; /* Empiler les sections du footer */
+        align-items: center;
+    }
+
+    .footer-newsletter input {
+        width: 80%; /* Ajuster la largeur du champ de saisie */
     }
 }
 
