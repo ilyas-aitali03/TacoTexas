@@ -25,11 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-        // Reservation Form Submission
         const reservationForm = document.getElementById("reservationForm");
         if (reservationForm) {
             reservationForm.addEventListener("submit", function (e) {
-                e.preventDefault(); // Prevent the form from submitting the traditional way
+                e.preventDefault();
     
                 // Get form values
                 const name = document.getElementById("name").value;
@@ -97,4 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
             this.reset();
         });
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Hamburger Menu
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
 });

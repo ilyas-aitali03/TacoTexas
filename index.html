@@ -126,19 +126,19 @@
     <p class="section-subtitle">Book your table online</p>
 
     <div class="reservation-form">
-        <form id="reservationForm" name="contact" method="POST" data-netlify="true" onSubmit="submit">
+        <form id="reservationForm" netlify name="reservation" method="POST" data-netlify="true">
             <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required name="name">
-
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required name="email">
-
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
             <label for="date">Date</label>
-            <input type="date" id="date" required name="date">
-
+            <input type="date" id="date" name="date" required>
+        
             <label for="guests">Number of Guests</label>
-            <input type="number" id="guests" min="1" max="20" placeholder="Enter number of guests" required name="guests">
-
+            <input type="number" id="guests" name="guests" min="1" max="20" placeholder="Enter number of guests" required>
+        
             <button type="submit" class="btn">Book Now</button>
         </form>
     </div>
@@ -175,15 +175,15 @@
 
         <div class="contact-container">
             <!-- Contact Form -->
-            <form class="contact-form" name="contact" method="POST" data-netlify="true" onSubmit="submit">
+            <form class="contact-form" netlify name="contact" method="POST" data-netlify="true">
                 <div class="input-group">
-                    <input type="text" id="name" placeholder="Your Name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name"  required>
                 </div>
                 <div class="input-group">
-                    <input type="email" id="email" placeholder="Your Email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
                 </div>
                 <div class="input-group">
-                    <textarea id="message" rows="4" placeholder="Your Message" name="message" required></textarea>
+                    <textarea id="message" rows="4" name="message" placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
             </form>
@@ -226,8 +226,8 @@
             <div class="footer-newsletter">
                 <h3>Subscribe to Our Newsletter</h3>
                 <p>Stay updated with the latest dishes and special offers!</p>
-                <form id="newsletter-form" name="contact" method="POST" data-netlify="true" onSubmit="submit">
-                    <input type="email" id="newsletter-email" placeholder="Enter your email" name="email" required>
+                <form id="newsletter-form" netlify name="newsletter" method="POST" data-netlify="true">
+                    <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required>
                     <button type="submit" class="btn">Subscribe</button>
                 </form>
             </div>
