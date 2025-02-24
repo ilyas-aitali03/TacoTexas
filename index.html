@@ -126,18 +126,18 @@
     <p class="section-subtitle">Book your table online</p>
 
     <div class="reservation-form">
-        <form id="reservationForm">
+        <form id="reservationForm" name="contact" method="POST" data-netlify="true" onSubmit="submit">
             <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="text" id="name" placeholder="Enter your name" required name="name">
 
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="email" id="email" placeholder="Enter your email" required name="email">
 
             <label for="date">Date</label>
-            <input type="date" id="date" required>
+            <input type="date" id="date" required name="date">
 
             <label for="guests">Number of Guests</label>
-            <input type="number" id="guests" min="1" max="20" placeholder="Enter number of guests" required>
+            <input type="number" id="guests" min="1" max="20" placeholder="Enter number of guests" required name="guests">
 
             <button type="submit" class="btn">Book Now</button>
         </form>
