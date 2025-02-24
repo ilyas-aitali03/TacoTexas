@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - TacoTexas</title>
+    <link rel="icon" href="photos/chef2.png" type="image/x-icon">
+    <link rel="stylesheet" href="order.css"> <!-- Lien vers order.css -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="photos/chef2.png" alt="TacoTexas">
+            <span>TacoTexas</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section de Paiement -->
+    <section class="payment-section">
+        <h2>Paiement</h2>
+        <p>Vous êtes sur le point de payer pour : <strong id="payment-dish-name"></strong></p>
+        <p>Prix total : <strong id="payment-total-price"></strong></p>
+
+       <!-- Formulaire de Paiement -->
+<form class="payment-form" id="paymentForm" netlify name="paiement" method="POST" data-netlify="true">
+    <!-- Champ pour le nom sur la carte -->
+    <label for="card-name">Nom sur la Carte :</label>
+    <input type="text" id="card-name" name="card-name" placeholder="Nom sur la carte" required>
+
+    <!-- Champ pour le numéro de la carte (max 16 caractères) -->
+    <label for="card-number">Numéro de la Carte :</label>
+    <input type="number" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" maxlength="16" minlength="16" required>
+
+    <!-- Champ pour la date d'expiration -->
+    <label for="card-expiry">Date d'Expiration :</label>
+    <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA" required>
+
+    <!-- Champ pour le code de sécurité (CVV) (max 3 caractères) -->
+    <label for="card-cvv">Code de Sécurité (CVV) :</label>
+    <input type="text" id="card-cvv" name="card-cvv" placeholder="123" maxlength="3" required>
+
+    <!-- Bouton de paiement -->
+    <button type="submit" class="btn">Payer Maintenant</button>
+</form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 TacoTexas. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script pour récupérer les informations de la commande et gérer le paiement -->
+    <script>
+        // Récupérer les paramètres de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const dishName = urlParams.get('dish');
+        const dishPrice = urlParams.get('price');
+        const quantity = urlParams.get('quantity');
+        const nom = urlParams.get('nom');
+        const numero = urlParams.get('numero');
+        const address = urlParams.get('address');
+
+        // Calculer le prix total
+        const totalPrice = (parseFloat(dishPrice) * parseInt(quantity)).toFixed(2);
+
+        // Afficher les informations de la commande
+        document.getElementById('payment-dish-name').textContent = `${quantity} x ${dishName}`;
+        document.getElementById('payment-total-price').textContent = `$${totalPrice}`;
+
+        // Gérer la soumission du formulaire de paiement
+        const paymentForm = document.getElementById('paymentForm');
+        paymentForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Empêcher le rechargement de la page
+
+            // Récupérer les valeurs du formulaire de paiement
+            const cardName = document.getElementById('card-name').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const cardExpiry = document.getElementById('card-expiry').value;
+            const cardCVV = document.getElementById('card-cvv').value;
+
+            // Valider les informations de la carte (exemple simple)
+            if (!cardName || !cardNumber || !cardExpiry || !cardCVV) {
+                alert("Veuillez remplir tous les champs du formulaire de paiement.");
+                return;
+            }
+
+            // Afficher un message de confirmation
+            alert(`Paiement réussi ! Merci, ${nom}, pour votre commande de ${quantity} ${dishName} à l'adresse ${address}.`);
+        });
+    </script>
+</body>
+</html>
