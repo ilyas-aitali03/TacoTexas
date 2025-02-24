@@ -175,15 +175,15 @@
 
         <div class="contact-container">
             <!-- Contact Form -->
-            <form class="contact-form">
+            <form class="contact-form" name="contact" method="POST" data-netlify="true" onSubmit="submit">
                 <div class="input-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" id="name" placeholder="Your Name" name="name" required>
                 </div>
                 <div class="input-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="email" id="email" placeholder="Your Email" name="email" required>
                 </div>
                 <div class="input-group">
-                    <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                    <textarea id="message" rows="4" placeholder="Your Message" name="message" required></textarea>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
             </form>
@@ -226,8 +226,8 @@
             <div class="footer-newsletter">
                 <h3>Subscribe to Our Newsletter</h3>
                 <p>Stay updated with the latest dishes and special offers!</p>
-                <form id="newsletter-form">
-                    <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                <form id="newsletter-form" name="contact" method="POST" data-netlify="true" onSubmit="submit">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email" name="email" required>
                     <button type="submit" class="btn">Subscribe</button>
                 </form>
             </div>
