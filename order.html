@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passer une Commande - TacoTexas</title>
+    <link rel="stylesheet" href="order.css"> <!-- Lien vers order.css -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="photos/chef2.png" alt="TacoTexas">
+            <span>TacoTexas</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section de Commande -->
+    <section class="order-section">
+        <h2>Passer une Commande</h2>
+        <p>Vous êtes sur le point de commander : <strong id="dish-name"></strong></p>
+        <p>Prix : <strong id="dish-price"></strong></p>
+
+        <!-- Formulaire de Commande -->
+        <form class="order-form" id="orderForm">
+            <!-- Champ pour l'adresse de livraison -->
+            <label for="Nom">Nom et Prenom :</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+            <label for="Number">Numero de Telephone :</label>
+            <input type="number" id="Numero" name="Numero" placeholder="Entrez votre Numero" required>
+            <label for="address">Adresse de Livraison :</label>
+            <input type="text" id="address" name="address" placeholder="Entrez votre adresse" required>
+
+            <!-- Champ pour la quantité -->
+            <label for="quantity">Quantité :</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+            <!-- Bouton de confirmation -->
+            <button type="submit" class="btn">Confirmer la Commande</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 TacoTexas. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script pour récupérer les informations du plat et gérer la commande -->
+    <script>
+        // Récupérer les paramètres de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const dishName = urlParams.get('dish');
+        const dishPrice = urlParams.get('price');
+
+        // Afficher les informations du plat
+        document.getElementById('dish-name').textContent = dishName;
+        document.getElementById('dish-price').textContent = `$${dishPrice}`;
+
+        // Gérer la soumission du formulaire
+        const orderForm = document.getElementById('orderForm');
+        orderForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Empêcher le rechargement de la page
+
+            // Récupérer les valeurs du formulaire
+            const address = document.getElementById('address').value;
+            const quantity = document.getElementById('quantity').value;
+
+            // Afficher un message de confirmation
+            alert(`Merci ! Votre commande de ${quantity} ${dishName} à l'adresse ${address} a été enregistrée.`);
+        });
+    </script>
+</body>
+</html>

@@ -14,19 +14,19 @@ body {
 /* Logo Styling */
 .logo {
     display: flex;
-    align-items: center; /* Aligne l'image et le texte verticalement */
-    gap: 10px; /* Espace entre l'image et le texte */
+    align-items: center;
+    gap: 10px;
 }
 
 .logo img {
-    height: 40px; /* Ajustez la hauteur de l'image */
-    width: auto; /* Garde les proportions de l'image */
+    height: 40px;
+    width: auto;
 }
 
 .logo span {
-    font-size: 1.8rem; /* Taille du texte */
-    font-weight: bold; /* Texte en gras */
-    color: #ffba08; /* Couleur du texte (jaune/orange) */
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffba08;
 }
 
 /* Header (Navbar) */
@@ -41,12 +41,6 @@ header {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffba08;
 }
 
 nav ul {
@@ -207,11 +201,11 @@ nav ul li a:hover {
     }
 
     .logo span {
-        font-size: 1.5rem; /* Réduire la taille du texte du logo */
+        font-size: 1.5rem;
     }
 
     .nav-links {
-        display: none; /* Masquer les liens de navigation par défaut */
+        display: none;
         flex-direction: column;
         background-color: #1a1a1a;
         position: absolute;
@@ -222,7 +216,7 @@ nav ul li a:hover {
     }
 
     .nav-links.active {
-        display: flex; /* Afficher les liens lorsque le menu est activé */
+        display: flex;
     }
 
     .nav-links li {
@@ -230,68 +224,68 @@ nav ul li a:hover {
     }
 
     .hamburger {
-        display: block; /* Afficher le bouton hamburger */
+        display: block;
     }
 
     /* Hero Section */
     .hero-title {
-        font-size: 2rem; /* Réduire la taille du titre */
+        font-size: 2rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem; /* Réduire la taille du sous-titre */
+        font-size: 1rem;
     }
 
     .hero-buttons {
-        flex-direction: column; /* Empiler les boutons verticalement */
+        flex-direction: column;
     }
 
     /* About Us Section */
     .about-container {
-        flex-direction: column; /* Empiler l'image et le texte */
+        flex-direction: column;
         text-align: center;
     }
 
     .about-image img {
-        max-width: 100%; /* Ajuster la largeur de l'image */
+        max-width: 100%;
     }
 
     .about-title {
-        font-size: 2rem; /* Réduire la taille du titre */
+        font-size: 2rem;
     }
 
     /* Signature Dishes Section */
     .dishes-container {
-        grid-template-columns: 1fr; /* Une seule colonne pour les plats */
+        grid-template-columns: 1fr;
     }
 
     /* Locations & Reservations Section */
     .location-container {
-        flex-direction: column; /* Empiler la carte et le formulaire */
+        flex-direction: column;
     }
 
     .map, .reservation-form {
-        max-width: 100%; /* Ajuster la largeur */
+        max-width: 100%;
     }
 
     /* Testimonials Section */
     .testimonial-slide {
-        max-width: 100%; /* Ajuster la largeur */
+        max-width: 100%;
     }
 
     /* Contact Section */
     .contact-container {
-        flex-direction: column; /* Empiler le formulaire et les informations */
+        flex-direction: column;
     }
 
     /* Footer Section */
     .footer-container {
-        flex-direction: column; /* Empiler les sections du footer */
+        flex-direction: column;
         align-items: center;
     }
 
     .footer-newsletter input {
-        width: 80%; /* Ajuster la largeur du champ de saisie */
+        width: 80%;
     }
 }
 
@@ -441,17 +435,48 @@ nav ul li a:hover {
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* Dishes Grid */
-.dishes-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* Menu Section */
+.menu {
+    padding: 80px 10%;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.menu .section-title,
+.menu .section-subtitle,
+.menu .menu-category,
+.menu .menu-items {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-.dish-card {
+.menu.visible .section-title,
+.menu.visible .section-subtitle,
+.menu.visible .menu-category,
+.menu.visible .menu-items {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Menu Category Styling */
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 2rem;
+    color: #ffba08;
+    margin-bottom: 20px;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
     background-color: #222;
     border-radius: 10px;
     padding: 20px;
@@ -460,50 +485,89 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(255, 186, 8, 0.1);
 }
 
-.dish-card:hover {
+.menu-item:hover {
     transform: scale(1.05);
 }
 
-.dish-card img {
+.menu-item img {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 186, 8, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
-.dish-card:hover img {
+.menu-item:hover img {
     transform: scale(1.1);
 }
 
-.dish-card h3 {
+.menu-item h4 {
     font-size: 1.5rem;
     margin: 15px 0 10px;
     color: #ffba08;
 }
 
-.dish-card p {
+.menu-item p {
     font-size: 1rem;
     color: #ccc;
 }
 
-/* Scroll Animation */
-.dishes.visible .section-title,
-.dishes.visible .section-subtitle,
-.dishes.visible .dishes-container {
-    opacity: 1;
-    transform: translateY(0);
+.menu-item .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffba08;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.order-btn {
+    background-color: #ffba08;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.order-btn:hover {
+    background-color: #e89f05;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .section-title {
+    .menu .section-title {
         font-size: 2rem;
     }
 
-    .section-subtitle {
+    .menu .section-subtitle {
         font-size: 1rem;
     }
+
+    .menu-items {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .menu-item h4 {
+        font-size: 1.3rem;
+    }
+
+    .menu-item p {
+        font-size: 0.9rem;
+    }
+
+    .menu-item .price {
+        font-size: 1rem;
+    }
+
+    .order-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
+
+
+
 
 /* Locations Section */
 .locations {
@@ -549,7 +613,7 @@ nav ul li a:hover {
     max-width: 500px;
 }
 
-//* Reservations Section */
+/* Reservations Section */
 .reservations {
     padding: 80px 10%;
     background-color: #1a1a1a;

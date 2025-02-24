@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
     heroTitle.classList.add("animate");
 
     // Scroll Animations
-    const sections = document.querySelectorAll(".about-container, .dishes, .locations, .testimonials, .contact");
-    sections.forEach(section => {
-        function checkVisibility() {
-            const rect = section.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                section.classList.add("visible");
-            }
+const sections = document.querySelectorAll(".about-container, .dishes, .locations, .testimonials, .contact, .menu");
+sections.forEach(section => {
+    function checkVisibility() {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            section.classList.add("visible");
         }
-        window.addEventListener("scroll", checkVisibility);
-        checkVisibility(); // Run on page load
-    });
+    }
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility(); // Run on page load
+});
 
     document.addEventListener("DOMContentLoaded", function () {
         const reservationForm = document.getElementById("reservationForm");
