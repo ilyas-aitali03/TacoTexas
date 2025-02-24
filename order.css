@@ -127,3 +127,84 @@ header {
     font-size: 1rem;
     color: #aaa;
 }
+/* Section de Paiement */
+.payment-section {
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.payment-section h2 {
+    font-size: 2rem;
+    color: #ffba08;
+    margin-bottom: 20px;
+}
+
+.payment-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 186, 8, 0.1);
+}
+
+.payment-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffba08;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.payment-form button {
+    width: 100%;
+    background-color: #ffba08;
+    color: #121212;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.payment-form button:hover {
+    background-color: #e89f05;
+}
+
+/* Responsive Design pour les Téléphones */
+@media (max-width: 768px) {
+    .payment-section {
+        padding: 20px 5%;
+    }
+
+    .payment-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .payment-form {
+        padding: 15px;
+    }
+
+    .payment-form input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .payment-form button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passer une Commande - TacoTexas</title>
+    <link rel="icon" href="photos/chef2.png" type="image/x-icon">
     <link rel="stylesheet" href="order.css"> <!-- Lien vers order.css -->
 </head>
 <body>
@@ -29,12 +30,16 @@
         <p>Prix : <strong id="dish-price"></strong></p>
 
         <!-- Formulaire de Commande -->
-        <form class="order-form" id="orderForm" name="orderform" netlify>
-            <!-- Champ pour l'adresse de livraison -->
-            <label for="Nom">Nom et Prenom :</label>
+        <form class="order-form" id="orderForm" netlify name="orderform" method="POST" data-netlify="true">
+            <!-- Champ pour le nom et prénom -->
+            <label for="nom">Nom et Prénom :</label>
             <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
-            <label for="Number">Numero de Telephone :</label>
-            <input type="number" id="Numero" name="Numero" placeholder="Entrez votre Numero" required>
+
+            <!-- Champ pour le numéro de téléphone -->
+            <label for="numero">Numéro de Téléphone :</label>
+            <input type="number" id="numero" name="numero" placeholder="Entrez votre numéro" required>
+
+            <!-- Champ pour l'adresse de livraison -->
             <label for="address">Adresse de Livraison :</label>
             <input type="text" id="address" name="address" placeholder="Entrez votre adresse" required>
 
@@ -69,11 +74,13 @@
             e.preventDefault(); // Empêcher le rechargement de la page
 
             // Récupérer les valeurs du formulaire
+            const nom = document.getElementById('nom').value;
+            const numero = document.getElementById('numero').value;
             const address = document.getElementById('address').value;
             const quantity = document.getElementById('quantity').value;
 
-            // Afficher un message de confirmation
-            alert(`Merci ! Votre commande de ${quantity} ${dishName} à l'adresse ${address} a été enregistrée.`);
+            // Rediriger vers la page de paiement avec les informations de la commande
+            window.location.href = `payment.html?dish=${encodeURIComponent(dishName)}&price=${dishPrice}&quantity=${quantity}&nom=${encodeURIComponent(nom)}&numero=${encodeURIComponent(numero)}&address=${encodeURIComponent(address)}`;
         });
     </script>
 </body>
